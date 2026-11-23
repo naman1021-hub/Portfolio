@@ -79,8 +79,7 @@ export const Education = () => {
                   <span className="text-[#FF7B59] font-bold">{cert.credentialId}</span>
                 </div>
 
-                {/* Skills verified */}
-                <div className="space-y-1">
+                {cert.skillsCovered?.length > 0 && (<div className="space-y-1">
                   <span className="text-[11px] font-mono text-slate-400">Core Competencies Tested:</span>
                   <ul className="text-xs text-slate-300 space-y-1 pl-1">
                     {cert.skillsCovered.slice(0, 3).map((s, idx) => (<li key={idx} className="flex items-center gap-1.5">
@@ -88,19 +87,19 @@ export const Education = () => {
                         <span>{s}</span>
                       </li>))}
                   </ul>
-                </div>
+                </div>)}
 
                 {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-2 pt-2">
                   <a href={cert.verificationUrl} target="_blank" rel="noreferrer" className="w-full sm:w-auto flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#FF5733] hover:bg-[#E64522] text-white text-xs font-medium transition-colors shadow-md shadow-[#FF5733]/25">
-                    <span>Verify on Coursera</span>
+                    <span>Verify on {cert.issuer}</span>
                     <ExternalLink className="w-3.5 h-3.5"/>
                   </a>
 
-                  <a href={cert.downloadUrl} download="Server_Side_JavaScript_Node_NIIT.pdf" className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#1A202E] hover:bg-[#222A3D] text-slate-200 text-xs font-medium border border-[#2B3547] transition-colors">
+                  {cert.downloadUrl && (<a href={cert.downloadUrl} download="Server_Side_JavaScript_Node_NIIT.pdf" className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#1A202E] hover:bg-[#222A3D] text-slate-200 text-xs font-medium border border-[#2B3547] transition-colors">
                     <Download className="w-3.5 h-3.5"/>
                     <span>PDF</span>
-                  </a>
+                  </a>)}
                 </div>
               </motion.div>))}
           </div>

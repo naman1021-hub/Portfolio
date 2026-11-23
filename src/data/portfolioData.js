@@ -242,6 +242,22 @@ export const certifications = [
             'Middleware Architecture & Error Handling',
             'Database Connectivity & CRUD operations'
         ]
+    },
+    {
+        id: 'microsoft-azure-solutions',
+        title: 'Develop Solutions for Microsoft Azure',
+        issuer: 'Microsoft Azure',
+        issueDate: 'June 26, 2026',
+        verificationUrl: 'https://learn.microsoft.com/api/achievements/share/en-us/NamanGupta-3519/WMMA643N?sharingId=C29AF16FAEDF5616',
+        credentialId: 'WMMA643N'
+    },
+    {
+        id: 'copilot-immersion-experience',
+        title: 'Copilot Immersion Experience',
+        issuer: 'Microsoft Azure',
+        issueDate: 'June 26, 2026',
+        verificationUrl: 'https://learn.microsoft.com/api/achievements/share/en-us/NamanGupta-3519/8VVRLYMW?sharingId=C29AF16FAEDF5616',
+        credentialId: '8VVRLYMW'
     }
 ];
 export const skillCategories = [

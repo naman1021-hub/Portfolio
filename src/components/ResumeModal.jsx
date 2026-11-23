@@ -118,7 +118,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
                       <a href={cert.verificationUrl} target="_blank" rel="noreferrer" className="px-3 py-1.5 rounded-lg bg-[#FF5733]/15 hover:bg-[#FF5733]/25 border border-[#FF5733]/30 text-[#FF7B59] text-xs font-medium transition-colors">
-                        Verify on Coursera ↗
+                        Verify on {cert.issuer} ↗
                       </a>
                     </div>
                   </div>))}

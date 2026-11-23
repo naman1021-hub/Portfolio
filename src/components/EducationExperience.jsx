@@ -79,7 +79,7 @@ export const EducationExperience = () => {
               </motion.div>))}
           </div>
 
-          {/* Right Column: Education & Verified Certifications */}
+          {/* Right Column: Education */}
           <div className="lg:col-span-6 space-y-8">
             <div className="flex items-center gap-3 pb-3 border-b border-[#232B3B]">
               <GraduationCap className="w-5 h-5 text-[#FF5733]"/>
@@ -107,32 +107,45 @@ export const EducationExperience = () => {
                 </motion.div>))}
             </div>
 
-            {/* Verified Certifications */}
-            <div className="pt-4">
-              <div className="flex items-center gap-3 pb-3 border-b border-[#232B3B] mb-6">
-                <Award className="w-5 h-5 text-[#FF5733]"/>
-                <h3 className="text-xl font-bold uppercase tracking-wider text-white font-display">
-                  Verified Credential
-                </h3>
-              </div>
-
-              {certifications.map((cert) => (<div key={cert.id} className="verified-credential-card p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-[#1C1820] to-[#121620] border border-[#FF5733]/30 space-y-4 shadow-xl">
-                  <div className="flex items-start justify-between flex-wrap gap-2">
-                    <div>
-                      <h4 className="text-lg font-bold text-white font-display">{cert.title}</h4>
-                      <p className="text-xs text-slate-400 mt-0.5">{cert.issuer} • Completed {cert.issueDate}</p>
-                      <p className="text-xs font-mono text-[#FF7B59] mt-1">ID: {cert.credentialId}</p>
-                    </div>
-
-                    <a href={cert.verificationUrl} target="_blank" rel="noopener noreferrer" className="credential-verify-button flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#FF5733] hover:bg-[#E64522] text-white text-xs font-bold tracking-wider uppercase transition-all shadow-md shadow-[#FF5733]/25">
-                      <span>VERIFY</span>
-                      <ExternalLink className="w-3.5 h-3.5"/>
-                    </a>
-                  </div>
-                </div>))}
-            </div>
           </div>
         </div>
+
+        {/* Verified Credentials */}
+        <section aria-labelledby="verified-credentials-heading" className="mt-14">
+          <div className="flex items-center gap-3 pb-4 border-b border-[#232B3B] mb-6">
+            <Award className="w-5 h-5 text-[#FF5733]"/>
+            <div>
+              <h3 id="verified-credentials-heading" className="text-xl font-bold uppercase tracking-wider text-white font-display">
+                Verified Credentials
+              </h3>
+              <p className="text-xs text-slate-400 mt-1">Recognized learning and technical achievements.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {certifications.map((cert) => (<motion.article key={cert.id} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35 }} className="verified-credential-card min-h-[210px] p-6 rounded-3xl border border-[#FF5733]/25 hover:border-[#FF5733]/60 transition-colors shadow-xl flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-[#FF5733]/15 border border-[#FF5733]/25 flex items-center justify-center">
+                      <Award className="w-5 h-5 text-[#FF7B59]"/>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-full bg-[#181E2C] border border-[#232B3B] text-[10px] font-mono uppercase tracking-wider text-slate-300">
+                      Verified
+                    </span>
+                  </div>
+
+                  <h4 className="text-lg font-bold text-white font-display leading-snug">{cert.title}</h4>
+                  <p className="text-xs text-slate-400 mt-1">{cert.issuer} <span aria-hidden="true">•</span> Completed {cert.issueDate}</p>
+                  <p className="text-[11px] font-mono text-[#FF7B59] mt-3">ID: {cert.credentialId}</p>
+                </div>
+
+                <a href={cert.verificationUrl} target="_blank" rel="noopener noreferrer" className="credential-verify-button mt-5 w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all shadow-md shadow-[#FF5733]/20">
+                  <span>Verify Credential</span>
+                  <ExternalLink className="w-3.5 h-3.5"/>
+                </a>
+              </motion.article>))}
+          </div>
+        </section>
       </div>
     </section>);
 };
