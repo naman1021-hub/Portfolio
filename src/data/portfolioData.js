@@ -19,6 +19,37 @@ export const personalInfo = {
 };
 export const projects = [
     {
+        id: 'vayuvision',
+        title: 'VayuVision',
+        tagline: 'AI-Powered Weather Assistant for Indian Locations',
+        category: 'AI & Web',
+        featured: true,
+        description: 'A weather assistant that brings conversational weather queries, current conditions, five-day forecasts, Indian location exploration, and forecast-based alerts into one application.',
+        problemStatement: 'Weather data is often presented as raw meteorological information that can be difficult for people to interpret and act on.',
+        solution: 'Combines weather conversations, location search, current conditions, five-day forecasts, saved locations, and configurable forecast-threshold notices.',
+        myRole: 'Team leader on a team project exploring conversational AI for weather forecasting, alerts, and climate information.',
+        technologies: ['React', 'Vite', 'JavaScript', 'Node.js', 'Express.js', 'Open-Meteo API', 'CSS'],
+        githubUrl: 'https://github.com/naman1021-hub/VayuVision',
+        highlights: [
+            'Conversational interface for weather-related questions',
+            'Search Indian cities and regions and view current conditions with five-day forecasts',
+            'Compare three assistant prompt versions with forecast context and data checks',
+            'Generate notices from configurable rain, wind, and temperature thresholds',
+            'Save locations in browser storage for quick access'
+        ],
+        architectureWorkflow: 'React + Vite Frontend → Express API → Open-Meteo Geocoding & Forecast APIs → Weather Context, Prompt Comparison & Threshold Notices',
+        previewType: 'weather',
+        mockupDetails: {
+            stats: [
+                { label: 'Forecast', value: 'Current + 5 Days' },
+                { label: 'Location Data', value: 'Open-Meteo' },
+                { label: 'Assistant Prompts', value: '3 Versions' }
+            ],
+            tags: ['Weather Assistant', 'Indian Locations', 'Forecast Alerts', 'Prompt Comparison'],
+            accentColor: '#38BDF8'
+        }
+    },
+    {
         id: 'worklens',
         title: 'WorkLens Edu',
         tagline: 'Full-Stack University Faculty & Staff Activity Tracking System',
@@ -252,7 +283,6 @@ export const skillCategories = [
             { name: 'MongoDB', level: 'experienced' },
             { name: 'Mongoose ODM', level: 'experienced' },
             { name: 'MySQL', level: 'experienced' },
-            { name: 'Pinecone (Vector DB)', level: 'learning' },
             { name: 'SQL Querying', level: 'experienced' }
         ]
     },
@@ -302,13 +332,22 @@ export const githubShowcase = {
     username: 'naman1021-hub',
     publicRepos: [
         {
+            name: 'VayuVision',
+            url: 'https://github.com/naman1021-hub/VayuVision',
+            description: 'AI-powered weather assistant for Indian locations with conversational weather, forecasts, location exploration, and forecast-based alerts.',
+            language: 'JavaScript',
+            stars: 1,
+            forks: 1,
+            isPrimary: true
+        },
+        {
             name: 'Worklens',
             url: 'https://github.com/naman1021-hub/Worklens',
             description: 'Centralized faculty & staff work-tracking platform: attendance, leaves, courses, assignments, and Recharts analytics dashboard.',
             language: 'JavaScript',
             stars: 1,
             forks: 0,
-            isPrimary: true
+            isPrimary: false
         },
         {
             name: 'MLops',
@@ -319,14 +358,5 @@ export const githubShowcase = {
             forks: 0,
             isPrimary: false
         },
-        {
-            name: 'daytona',
-            url: 'https://github.com/naman1021-hub/daytona',
-            description: 'Daytona development environment & infrastructure for running AI-generated code.',
-            language: 'Go / Shell',
-            stars: 0,
-            forks: 0,
-            isPrimary: false
-        }
     ]
 };

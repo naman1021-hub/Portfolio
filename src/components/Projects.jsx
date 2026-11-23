@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Layers, Activity, Terminal, FileCheck2, Cloud, TrendingDown, Check } from 'lucide-react';
+import { ArrowUpRight, Layers, Activity, Terminal, FileCheck2, Cloud, CloudRain, TrendingDown, Check } from 'lucide-react';
 import { Github } from './SocialIcons';
 import { projects } from '../data/portfolioData';
 export const Projects = ({ onSelectProject }) => {
@@ -12,6 +12,41 @@ export const Projects = ({ onSelectProject }) => {
     // Visual mockups per project type
     const renderVisualMockup = (project) => {
         switch (project.previewType) {
+            case 'weather':
+                return (<div className="w-full h-56 rounded-2xl bg-[#0E1117] border border-[#232B3B] p-4 flex flex-col justify-between font-mono text-[11px] overflow-hidden">
+            <div className="flex items-center justify-between border-b border-[#232B3B] pb-2.5">
+              <span className="text-sky-300 font-bold flex items-center gap-2">
+                <CloudRain className="w-4 h-4"/> VayuVision Weather
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] bg-[#1A202E] text-slate-300 border border-[#2B3547]">
+                Indian Location Explorer
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2.5 my-3">
+              <div className="p-2.5 rounded-xl bg-[#131722] border border-[#232B3B]">
+                <div className="text-slate-400 text-[10px]">Forecast</div>
+                <div className="text-white font-bold text-base mt-0.5">5-Day Outlook</div>
+                <div className="text-sky-300 text-[10px] mt-0.5">Current conditions</div>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#131722] border border-[#232B3B]">
+                <div className="text-slate-400 text-[10px]">Weather Assistant</div>
+                <div className="text-white font-bold text-base mt-0.5">Prompt V1–V3</div>
+                <div className="text-sky-300 text-[10px] mt-0.5">Context & data checks</div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="p-2.5 rounded-lg bg-[#131722] border border-[#232B3B] flex items-center justify-between">
+                <span className="text-slate-300">Search cities, districts & states</span>
+                <span className="text-sky-300">API</span>
+              </div>
+              <div className="p-2.5 rounded-lg bg-[#131722] border border-[#232B3B] flex items-center justify-between">
+                <span className="text-slate-300">Forecast-based notices</span>
+                <span className="text-amber-300">Alerts</span>
+              </div>
+            </div>
+          </div>);
             case 'cloud':
                 return (<div className="w-full h-56 rounded-2xl bg-[#0E1117] border border-[#232B3B] p-4 flex flex-col justify-between font-mono text-[11px] overflow-hidden">
             <div className="flex items-center justify-between border-b border-[#232B3B] pb-2.5">
