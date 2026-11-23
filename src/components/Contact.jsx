@@ -59,11 +59,11 @@ export const Contact = ({ onNotify }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Section Header */}
         <div className="mb-16 pb-8 border-b border-[#232B3B]">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#FF5733] block mb-2">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#C45D38] block mb-2">
             // 04. GET IN TOUCH
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white uppercase font-display">
-            Let's Connect<span className="text-[#FF5733]">.</span>
+            Let's Connect<span className="text-[#C45D38]">.</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-2xl mt-4 leading-relaxed">
             Open to software engineering and frontend developer internship opportunities, hackathons, and high-impact full-stack collaborations.
@@ -81,12 +81,12 @@ export const Contact = ({ onNotify }) => {
               {/* Email */}
               <div className="flex items-center justify-between p-4 rounded-2xl bg-[#0E1117] border border-[#232B3B]">
                 <div className="flex min-w-0 items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#FF5733]/15 flex items-center justify-center text-[#FF643D]">
+                  <div className="w-9 h-9 rounded-xl bg-[#B9522C]/15 flex items-center justify-center text-[#D97745]">
                     <Mail className="w-4 h-4"/>
                   </div>
                   <div className="min-w-0">
                     <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block">Email Address</span>
-                    <a href={`mailto:${personalInfo.email}`} className="break-all text-xs sm:text-sm font-semibold text-slate-200 hover:text-[#FF7B59] transition-colors font-mono">
+                    <a href={`mailto:${personalInfo.email}`} className="break-all text-xs sm:text-sm font-semibold text-slate-200 hover:text-[#D97745] transition-colors font-mono">
                       {personalInfo.email}
                     </a>
                   </div>
@@ -99,12 +99,12 @@ export const Contact = ({ onNotify }) => {
               {/* Phone */}
               <div className="flex items-center justify-between p-4 rounded-2xl bg-[#0E1117] border border-[#232B3B]">
                 <div className="flex min-w-0 items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#FF5733]/15 flex items-center justify-center text-[#FF643D]">
+                  <div className="w-9 h-9 rounded-xl bg-[#B9522C]/15 flex items-center justify-center text-[#D97745]">
                     <Phone className="w-4 h-4"/>
                   </div>
                   <div className="min-w-0">
                     <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block">Phone Contact</span>
-                    <a href={`tel:${personalInfo.phone}`} className="break-all text-xs sm:text-sm font-semibold text-slate-200 hover:text-[#FF7B59] transition-colors font-mono">
+                    <a href={`tel:${personalInfo.phone}`} className="break-all text-xs sm:text-sm font-semibold text-slate-200 hover:text-[#D97745] transition-colors font-mono">
                       {personalInfo.phone}
                     </a>
                   </div>
@@ -116,7 +116,7 @@ export const Contact = ({ onNotify }) => {
 
               {/* Location */}
               <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#0E1117] border border-[#232B3B]">
-                <div className="w-9 h-9 rounded-xl bg-[#FF5733]/15 flex items-center justify-center text-[#FF643D]">
+                <div className="w-9 h-9 rounded-xl bg-[#B9522C]/15 flex items-center justify-center text-[#D97745]">
                   <MapPin className="w-4 h-4"/>
                 </div>
                 <div>
@@ -127,13 +127,13 @@ export const Contact = ({ onNotify }) => {
 
               {/* Social Channels */}
               <div className="flex items-center gap-3 pt-2">
-                <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-[#181E2C] border border-[#232B3B] hover:border-[#FF5733] text-slate-300 hover:text-white text-xs font-bold tracking-wider uppercase transition-colors">
-                  <Linkedin className="w-4 h-4 text-[#FF7B59]"/>
+                <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-[#181E2C] border border-[#232B3B] hover:border-[#C45D38] text-slate-300 hover:text-white text-xs font-bold tracking-wider uppercase transition-colors">
+                  <Linkedin className="w-4 h-4 text-[#D97745]"/>
                   <span>LinkedIn</span>
                   <ArrowUpRight className="w-3 h-3 text-slate-500"/>
                 </a>
 
-                <a href={personalInfo.github} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-[#181E2C] border border-[#232B3B] hover:border-[#FF5733] text-slate-300 hover:text-white text-xs font-bold tracking-wider uppercase transition-colors">
+                <a href={personalInfo.github} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-[#181E2C] border border-[#232B3B] hover:border-[#C45D38] text-slate-300 hover:text-white text-xs font-bold tracking-wider uppercase transition-colors">
                   <Github className="w-4 h-4 text-slate-300"/>
                   <span>GitHub</span>
                   <ArrowUpRight className="w-3 h-3 text-slate-500"/>
@@ -143,14 +143,14 @@ export const Contact = ({ onNotify }) => {
 
             {/* Quick Templates */}
             <div className="p-5 sm:p-6 rounded-3xl bg-[#121620]/60 border border-[#232B3B] space-y-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#FF7B59] block">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#D97745] block">
                 Message Scenarios
               </span>
               <p className="text-xs text-slate-400">
                 Click to load a draft directly into the composer:
               </p>
               <div className="flex flex-wrap gap-2">
-                {quickTemplates.map((tpl) => (<button key={tpl.title} onClick={() => handleApplyTemplate(tpl)} className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#181E2C] hover:bg-[#FF5733]/15 text-slate-300 hover:text-[#FF7B59] border border-[#232B3B] hover:border-[#FF5733]/40 transition-colors">
+                {quickTemplates.map((tpl) => (<button key={tpl.title} onClick={() => handleApplyTemplate(tpl)} className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#181E2C] hover:bg-[#B9522C]/15 text-slate-300 hover:text-[#D97745] border border-[#232B3B] hover:border-[#C45D38]/40 transition-colors">
                     {tpl.title}
                   </button>))}
               </div>
@@ -167,23 +167,23 @@ export const Contact = ({ onNotify }) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-mono text-slate-400 mb-2 uppercase tracking-wider">Your Name</label>
-                  <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="e.g. Alex Morgan" className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#FF5733] transition-colors font-mono"/>
+                  <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="e.g. Alex Morgan" className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#C45D38] transition-colors font-mono"/>
                 </div>
 
                 <div>
                   <label className="block text-xs font-mono text-slate-400 mb-2 uppercase tracking-wider">Your Email</label>
-                  <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="alex@company.com" className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#FF5733] transition-colors font-mono"/>
+                  <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="alex@company.com" className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#C45D38] transition-colors font-mono"/>
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-mono text-slate-400 mb-2 uppercase tracking-wider">Subject</label>
-                <input type="text" required value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="Subject of message..." className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#FF5733] transition-colors font-mono"/>
+                <input type="text" required value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="Subject of message..." className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#C45D38] transition-colors font-mono"/>
               </div>
 
               <div>
                 <label className="block text-xs font-mono text-slate-400 mb-2 uppercase tracking-wider">Message</label>
-                <textarea rows={6} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Your message details..." className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#FF5733] transition-colors resize-none font-sans"/>
+                <textarea rows={6} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Your message details..." className="w-full px-4 py-3 text-xs rounded-2xl bg-[#0E1117] border border-[#232B3B] text-white placeholder-slate-600 focus:outline-none focus:border-[#C45D38] transition-colors resize-none font-sans"/>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3">
@@ -191,7 +191,7 @@ export const Contact = ({ onNotify }) => {
                   Sends directly via your default email client
                 </span>
 
-                <button type="submit" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#FF5733] hover:bg-[#E64522] text-white font-bold text-xs tracking-widest uppercase transition-all shadow-lg shadow-[#FF5733]/25 flex items-center justify-center gap-2 hover:scale-105">
+                <button type="submit" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#B9522C] hover:bg-[#9C472B] text-white font-bold text-xs tracking-widest uppercase transition-all shadow-lg shadow-[#C45D38]/25 flex items-center justify-center gap-2 hover:scale-105">
                   <span>SEND MESSAGE</span>
                   <Send className="w-3.5 h-3.5"/>
                 </button>

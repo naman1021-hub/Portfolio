@@ -68,7 +68,7 @@ export function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-[#0B0D13] text-[#F1F5F9] selection:bg-[#FF5733] selection:text-white transition-colors duration-300 flex flex-col">
+        <div className="min-h-screen bg-[#0B0D13] text-[#F1F5F9] selection:bg-[#B9522C] selection:text-white transition-colors duration-300 flex flex-col">
           <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
           <AnimatedRoutes

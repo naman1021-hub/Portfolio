@@ -28,8 +28,8 @@ export const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header (Clean, professional without AI tropes) */}
         <div className="flex flex-col items-start space-y-2 mb-12">
-          <div className="inline-flex items-center gap-2 text-[#FF643D] font-mono text-xs uppercase tracking-wider font-semibold">
-            <span className="w-2 h-2 rounded-full bg-[#FF5733]"/>
+          <div className="inline-flex items-center gap-2 text-[#D97745] font-mono text-xs uppercase tracking-wider font-semibold">
+            <span className="w-2 h-2 rounded-full bg-[#B9522C]"/>
             <span>ENGINEERING PRINCIPLES</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
@@ -53,7 +53,7 @@ export const About = () => {
                 During my two-month Software Developer Internship at <strong className="text-white font-medium">Ameriprise Financial</strong> on the IRNet platform, I worked within an enterprise codebase. I learned firsthand how large-scale engineering teams structure React components, manage global state with Redux, debug complex asynchronous API behaviors, and uphold disciplined Git review cycles.
               </p>
               <p>
-                Whether it's building a complete faculty management dashboard like <span className="text-[#FF7B59] font-medium">WorkLens Edu</span>, integrating speech-to-text and LLM evaluations in <span className="text-[#FF7B59] font-medium">Githired</span>, or exploring vector similarity search in <span className="text-[#FF7B59] font-medium">Resume Matcher AI</span>, I prioritize clean architectural boundaries and reliable code execution.
+                Whether it's building a complete faculty management dashboard like <span className="text-[#D97745] font-medium">WorkLens Edu</span>, integrating speech-to-text and LLM evaluations in <span className="text-[#D97745] font-medium">Githired</span>, or exploring vector similarity search in <span className="text-[#D97745] font-medium">Resume Matcher AI</span>, I prioritize clean architectural boundaries and reliable code execution.
               </p>
             </div>
           </motion.div>
@@ -62,8 +62,8 @@ export const About = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
-            return (<div key={idx} className="p-5 rounded-2xl bg-[#131722]/60 hover:bg-[#171D2B] border border-[#232B3B] hover:border-[#FF5733]/40 transition-all group shadow-md">
-                  <div className="w-10 h-10 rounded-xl bg-[#FF5733]/10 border border-[#FF5733]/25 flex items-center justify-center text-[#FF643D] group-hover:scale-105 transition-all mb-4">
+            return (<div key={idx} className="p-5 rounded-2xl bg-[#131722]/60 hover:bg-[#171D2B] border border-[#232B3B] hover:border-[#C45D38]/40 transition-all group shadow-md">
+                  <div className="w-10 h-10 rounded-xl bg-[#B9522C]/10 border border-[#C45D38]/25 flex items-center justify-center text-[#D97745] group-hover:scale-105 transition-all mb-4">
                     <Icon className="w-5 h-5"/>
                   </div>
                   <h4 className="text-sm font-semibold text-white mb-2">{pillar.title}</h4>

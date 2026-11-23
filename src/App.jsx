@@ -45,7 +45,7 @@ export function App() {
       <BrowserRouter>
         <div className="relative isolate min-h-screen">
           <div className="page-ambient-animation fixed inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true"/>
-          <div className="relative z-10 min-h-screen text-[#F1F5F9] selection:bg-[#FF5733] selection:text-white transition-colors duration-300 flex flex-col">
+          <div className="relative z-10 min-h-screen text-[#F1F5F9] selection:bg-[#B9522C] selection:text-white transition-colors duration-300 flex flex-col">
             <Navbar onOpenResume={() => setIsResumeOpen(true)}/>
 
             <AnimatedRoutes onSelectProject={(project) => setSelectedProject(project)} onOpenResume={() => setIsResumeOpen(true)} onNotify={showNotification}/>

@@ -26,7 +26,7 @@ export const ProjectModal = ({ project, onClose }) => {
                   <Github className="w-3.5 h-3.5"/>
                   <span>GitHub</span>
                 </a>)}
-              {project.demoUrl && (<a href={project.demoUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF5733] hover:bg-[#E64522] text-white text-xs font-medium transition-colors shadow-md shadow-[#FF5733]/25">
+              {project.demoUrl && (<a href={project.demoUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#B9522C] hover:bg-[#9C472B] text-white text-xs font-medium transition-colors shadow-md shadow-[#C45D38]/25">
                   <ExternalLink className="w-3.5 h-3.5"/>
                   <span>Live Demo</span>
                 </a>)}
@@ -46,7 +46,7 @@ export const ProjectModal = ({ project, onClose }) => {
 
             {/* Architecture Workflow Box */}
             <div className="p-4 rounded-xl bg-[#0E1117] border border-[#232B3B] font-mono text-xs">
-              <div className="flex items-center gap-2 text-[#FF7B59] font-semibold mb-2">
+              <div className="flex items-center gap-2 text-[#D97745] font-semibold mb-2">
                 <Layers className="w-4 h-4"/>
                 <span>Architecture & Data Flow:</span>
               </div>
@@ -77,7 +77,7 @@ export const ProjectModal = ({ project, onClose }) => {
             {/* My Personal Role */}
             <div className="p-4 rounded-xl bg-[#0E1117] border border-[#232B3B]">
               <div className="flex items-center gap-2 text-slate-200 font-semibold text-xs mb-1.5">
-                <Cpu className="w-3.5 h-3.5 text-[#FF643D]"/>
+                <Cpu className="w-3.5 h-3.5 text-[#D97745]"/>
                 <span>My Direct Engineering Contribution</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">{project.myRole}</p>
@@ -88,7 +88,7 @@ export const ProjectModal = ({ project, onClose }) => {
               <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 mb-3">Key Features & Implementations</h4>
               <ul className="space-y-2">
                 {project.highlights.map((highlight, idx) => (<li key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF5733] mt-1.5 shrink-0"/>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B9522C] mt-1.5 shrink-0"/>
                     <span>{highlight}</span>
                   </li>))}
               </ul>

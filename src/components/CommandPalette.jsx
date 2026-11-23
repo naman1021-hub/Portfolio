@@ -98,7 +98,7 @@ export const CommandPalette = ({ isOpen, onClose, onOpenResume, onNotify }) => {
         <motion.div initial={{ opacity: 0, scale: 0.96, y: -10 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.96, y: -10 }} transition={{ duration: 0.15 }} className="relative w-full max-w-xl bg-[#131722] border border-[#232B3B] rounded-2xl shadow-2xl overflow-hidden z-10">
           {/* Search Input Bar */}
           <div className="flex items-center px-4 py-3.5 border-b border-[#232B3B] bg-[#0E1117]/80">
-            <Search className="w-5 h-5 text-[#FF643D] shrink-0 mr-3"/>
+            <Search className="w-5 h-5 text-[#D97745] shrink-0 mr-3"/>
             <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Type to search sections, projects, or actions..." className="flex-1 bg-transparent text-sm text-slate-100 placeholder-slate-500 focus:outline-none font-mono" autoFocus/>
             <button onClick={onClose} className="p-1 rounded-md text-slate-400 hover:text-white">
               <X className="w-4 h-4"/>
@@ -111,9 +111,9 @@ export const CommandPalette = ({ isOpen, onClose, onOpenResume, onNotify }) => {
                 No commands matching "{query}"
               </div>) : (filteredItems.map((item, idx) => {
             const Icon = item.icon;
-            return (<button key={idx} onClick={item.action} className="w-full flex items-center justify-between p-2.5 rounded-xl hover:bg-[#FF5733]/15 text-left text-xs transition-colors group">
+            return (<button key={idx} onClick={item.action} className="w-full flex items-center justify-between p-2.5 rounded-xl hover:bg-[#B9522C]/15 text-left text-xs transition-colors group">
                     <div className="flex items-center gap-3">
-                      <div className="w-7 h-7 rounded-lg bg-[#1A202E] flex items-center justify-center text-slate-400 group-hover:text-[#FF7B59] group-hover:bg-[#FF5733]/20 transition-colors">
+                      <div className="w-7 h-7 rounded-lg bg-[#1A202E] flex items-center justify-center text-slate-400 group-hover:text-[#D97745] group-hover:bg-[#B9522C]/20 transition-colors">
                         <Icon className="w-4 h-4"/>
                       </div>
                       <div>
@@ -121,7 +121,7 @@ export const CommandPalette = ({ isOpen, onClose, onOpenResume, onNotify }) => {
                         <p className="text-[11px] text-slate-500 font-mono">{item.category}</p>
                       </div>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#FF5733] transition-colors"/>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#C45D38] transition-colors"/>
                   </button>);
         }))}
           </div>

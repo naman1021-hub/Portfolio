@@ -44,8 +44,8 @@ export const GitHubActivity = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#FF643D] font-mono text-xs uppercase tracking-wider font-semibold mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#FF5733]"/>
+            <div className="inline-flex items-center gap-2 text-[#D97745] font-mono text-xs uppercase tracking-wider font-semibold mb-2">
+              <span className="w-2 h-2 rounded-full bg-[#B9522C]"/>
               <span>SOURCE REPOSITORIES</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-2.5">
@@ -53,11 +53,11 @@ export const GitHubActivity = () => {
               <span>Public Developer Repositories</span>
             </h2>
             <p className="text-slate-400 text-xs sm:text-sm mt-1">
-              Synchronized directly with <a href={githubShowcase.profileUrl} target="_blank" rel="noreferrer" className="text-[#FF7B59] underline font-mono hover:text-[#FF8C6B]">github.com/{githubShowcase.username}</a>
+              Synchronized directly with <a href={githubShowcase.profileUrl} target="_blank" rel="noreferrer" className="text-[#D97745] underline font-mono hover:text-[#E3926E]">github.com/{githubShowcase.username}</a>
             </p>
           </div>
 
-          <a href={githubShowcase.profileUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#131722] border border-[#232B3B] text-slate-200 hover:text-white hover:border-[#FF5733]/40 text-xs font-medium transition-colors self-start sm:self-auto">
+          <a href={githubShowcase.profileUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#131722] border border-[#232B3B] text-slate-200 hover:text-white hover:border-[#C45D38]/40 text-xs font-medium transition-colors self-start sm:self-auto">
             <span>Visit GitHub Profile</span>
             <ExternalLink className="w-3.5 h-3.5"/>
           </a>
@@ -65,16 +65,16 @@ export const GitHubActivity = () => {
 
         {/* Repositories Cards */}
         {loading ? (<div className="flex items-center justify-center p-12 text-xs font-mono text-slate-400">
-            <RefreshCw className="w-4 h-4 animate-spin text-[#FF643D] mr-2"/>
+            <RefreshCw className="w-4 h-4 animate-spin text-[#D97745] mr-2"/>
             <span>Fetching repositories...</span>
           </div>) : (<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {repos.map((repo) => (<motion.a key={repo.id} href={repo.html_url} target="_blank" rel="noreferrer" whileHover={{ y: -3 }} transition={{ duration: 0.2 }} className="p-5 rounded-2xl bg-[#131722]/80 hover:bg-[#171D2B] border border-[#232B3B] hover:border-[#FF5733]/40 transition-all flex flex-col justify-between group shadow-lg">
+            {repos.map((repo) => (<motion.a key={repo.id} href={repo.html_url} target="_blank" rel="noreferrer" whileHover={{ y: -3 }} transition={{ duration: 0.2 }} className="p-5 rounded-2xl bg-[#131722]/80 hover:bg-[#171D2B] border border-[#232B3B] hover:border-[#C45D38]/40 transition-all flex flex-col justify-between group shadow-lg">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-white group-hover:text-[#FF7B59] transition-colors font-mono">
+                    <span className="text-sm font-bold text-white group-hover:text-[#D97745] transition-colors font-mono">
                       {repo.name}
                     </span>
-                    <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#FF7B59] transition-colors"/>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#D97745] transition-colors"/>
                   </div>
 
                   <p className="text-xs text-slate-400 line-clamp-3 leading-relaxed">
@@ -84,7 +84,7 @@ export const GitHubActivity = () => {
 
                 <div className="flex items-center justify-between pt-4 mt-4 border-t border-[#232B3B] text-[11px] font-mono text-slate-500">
                   <span className="flex items-center gap-1.5 text-slate-300">
-                    <Code2 className="w-3.5 h-3.5 text-[#FF643D]"/>
+                    <Code2 className="w-3.5 h-3.5 text-[#D97745]"/>
                     {repo.language || 'Codebase'}
                   </span>
 

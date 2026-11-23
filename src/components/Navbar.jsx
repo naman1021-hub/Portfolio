@@ -30,10 +30,10 @@ export const Navbar = ({ onOpenResume }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand — arrow + name */}
         <Link to="/" className="flex items-center gap-2 group">
-          <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-[#FF5733] transition-colors"/>
+          <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-[#C45D38] transition-colors"/>
           <span className="text-lg sm:text-xl font-bold tracking-tight text-white font-display">
             {personalInfo.name}
-            <span className="brand-dot text-[#FF5733] ml-0.5" aria-hidden="true">.</span>
+            <span className="brand-dot text-[#C45D38] ml-0.5" aria-hidden="true">.</span>
           </span>
         </Link>
 
@@ -44,17 +44,17 @@ export const Navbar = ({ onOpenResume }) => {
                 : 'text-slate-400 hover:text-white'}`}>
               {link.label}
               {/* Active underline indicator */}
-              <span className={`absolute -bottom-1 left-0 h-px bg-[#FF5733] transition-all duration-300 ${isActive(link.to) ? 'w-full' : 'w-0 group-hover:w-full'}`}/>
+              <span className={`absolute -bottom-1 left-0 h-px bg-[#B9522C] transition-all duration-300 ${isActive(link.to) ? 'w-full' : 'w-0 group-hover:w-full'}`}/>
             </Link>))}
         </nav>
 
         {/* Desktop right: theme toggle + resume */}
         <div className="hidden lg:flex items-center gap-4">
           <button onClick={toggleTheme} className="p-2 rounded-full text-slate-400 hover:text-white hover:bg-[#181E2C] transition-colors" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} aria-pressed={theme === 'light'} title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}>
-            {theme === 'dark' ? <Sun className="w-4 h-4"/> : <Moon className="w-4 h-4 text-[#FF5733]"/>}
+            {theme === 'dark' ? <Sun className="w-4 h-4"/> : <Moon className="w-4 h-4 text-[#C45D38]"/>}
           </button>
 
-          <button onClick={onOpenResume} className="navbar-resume-button px-6 py-2.5 rounded-full bg-[#FF5733] text-white text-xs font-bold tracking-wider uppercase transition-all duration-300 border border-[#232B3B] hover:border-[#FF5733] shadow-lg shadow-black/50 hover:shadow-[#FF5733]/25">
+          <button onClick={onOpenResume} className="navbar-resume-button px-6 py-2.5 rounded-full bg-[#B9522C] text-white text-xs font-bold tracking-wider uppercase transition-all duration-300 border border-[#232B3B] hover:border-[#C45D38] shadow-lg shadow-black/50 hover:shadow-[#C45D38]/25">
             DOWNLOAD RESUME
           </button>
         </div>
@@ -75,8 +75,8 @@ export const Navbar = ({ onOpenResume }) => {
       {mobileMenuOpen && (<div className="lg:hidden border-b border-[#232B3B] bg-[#0B0D13]/98 backdrop-blur-2xl px-6 py-6 space-y-4">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (<Link key={link.to} to={link.to} className={`text-base font-medium py-2.5 border-b border-[#1A2030] transition-colors ${isActive(link.to)
-                    ? 'text-[#FF5733]'
-                    : 'text-slate-200 hover:text-[#FF5733]'}`}>
+                    ? 'text-[#C45D38]'
+                    : 'text-slate-200 hover:text-[#C45D38]'}`}>
                 {link.label}
               </Link>))}
           </div>
@@ -85,7 +85,7 @@ export const Navbar = ({ onOpenResume }) => {
             <button onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenResume();
-            }} className="w-full py-3 rounded-full bg-[#FF5733] text-white text-xs font-bold tracking-wider uppercase shadow-md shadow-[#FF5733]/25">
+            }} className="w-full py-3 rounded-full bg-[#B9522C] text-white text-xs font-bold tracking-wider uppercase shadow-md shadow-[#C45D38]/25">
               DOWNLOAD RESUME
             </button>
           </div>
