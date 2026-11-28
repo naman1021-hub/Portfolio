@@ -1,4 +1,5 @@
 import React from 'react';
+import avatar from '../assets/avatar.png';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Github } from './SocialIcons';
@@ -42,10 +43,14 @@ export const Hero = () => {
               AI
             </motion.h1>
 
+            <motion.h1 initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.42, ease: [0.22, 1, 0.36, 1] }} className="hero-title-line min-w-0 max-w-full text-[clamp(1.5rem,7.2vw,2.25rem)] sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tightest uppercase font-display leading-[0.92] text-white">
+              ENGINEER
+            </motion.h1>
+
             {/* Peeking Avatar Badge */}
             <div className="hero-avatar-float relative inline-flex items-center justify-center -my-2 sm:-my-4">
               <div className="hero-avatar-ring w-10 h-10 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-full overflow-hidden border-2 border-[#C45D38] bg-[#121620] shadow-2xl shadow-[#C45D38]/30">
-                <img src="/avatar.png" alt="Naman Gupta" className="w-full h-full object-cover scale-110" onError={(e) => {
+                <img src={avatar} alt="Naman Gupta" className="w-full h-full object-cover scale-110" onError={(e) => {
             // Fallback to monogram if avatar fails
             const target = e.target;
             target.style.display = 'none';
@@ -62,10 +67,6 @@ export const Hero = () => {
                 <Github className="h-4 w-4" />
               </a>
             </div>
-
-            <motion.h1 initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.42, ease: [0.22, 1, 0.36, 1] }} className="hero-title-line min-w-0 max-w-full text-[clamp(1.5rem,7.2vw,2.25rem)] sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tightest uppercase font-display leading-[0.92] text-white">
-              ENGINEER
-            </motion.h1>
           </div>
         </motion.div>
 
