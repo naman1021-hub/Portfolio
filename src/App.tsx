@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ThemeProvider } from './components/ThemeContext'
@@ -15,6 +15,7 @@ import { ContactPage } from './pages/ContactPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import type { Project } from './types'
 import ShapeWaves from './components/ShapeWaves'
+import TargetCursor from './components/TargetCursor'
 
 // Page transition wrapper — smooth fade between routes
 const pageVariants = {
@@ -33,6 +34,11 @@ function AnimatedRoutes({
   onNotify: (m: string) => void
 }) {
   const location = useLocation()
+
+  useLayoutEffect(() => {
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }, [location.pathname])
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -96,6 +102,7 @@ export function App() {
             introDuration={1.6}
             paused={false}
           />
+          <TargetCursor spinDuration={2} hideDefaultCursor parallaxOn />
 
           <div className="relative z-10 flex min-h-screen flex-col">
             <Navbar onOpenResume={() => setIsResumeOpen(true)} />

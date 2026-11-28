@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import portrait from '../assets/naman-gupta.jpg';
 import { personalInfo } from '../data/portfolioData';
 import { HoloCard } from './HoloCard';
@@ -9,28 +9,8 @@ import { TechText } from './TechText';
 const featuredSkills = ['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'AI'];
 
 export const Hero = () => {
-  const prefersReducedMotion = useReducedMotion();
-
-  const moveSpotlight = (event) => {
-    if (prefersReducedMotion) return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const pointerX = ((event.clientX - bounds.left) / bounds.width) * 100;
-    const pointerY = ((event.clientY - bounds.top) / bounds.height) * 100;
-    event.currentTarget.style.setProperty('--pointer-x', `${pointerX}%`);
-    event.currentTarget.style.setProperty('--pointer-y', `${pointerY}%`);
-    event.currentTarget.classList.add('is-pointer-active');
-  };
-
-  const resetSpotlight = (event) => {
-    event.currentTarget.classList.remove('is-pointer-active');
-    event.currentTarget.style.removeProperty('--pointer-x');
-    event.currentTarget.style.removeProperty('--pointer-y');
-  };
-
   return (
     <section
-      onPointerMove={moveSpotlight}
-      onPointerLeave={resetSpotlight}
       className="hero-section relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden py-24 sm:py-28 lg:py-20"
     >
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)] lg:gap-16 lg:px-8">

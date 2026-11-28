@@ -80,7 +80,14 @@ const ShapeWaves = ({
     let frameId = 0;
     let lastFrameTime = 0;
     let lastClick = { x: -1000, y: -1000, time: -Infinity };
-    const pointer = { x: -1000, y: -1000 };
+    const pointer = {
+      x: -1000,
+      y: -1000,
+      targetX: -1000,
+      targetY: -1000,
+      active: false,
+      strength: 0,
+    };
     const startTime = performance.now();
 
     const updateTheme = () => {
@@ -142,6 +149,11 @@ const ShapeWaves = ({
       const normalizedContrast = Math.max(0.25, Math.min(2, contrast));
       const radius = Math.max(1, splashRadius);
       const clickAge = (now - lastClick.time) / 1000;
+      pointer.strength += ((pointer.active ? 1 : 0) - pointer.strength) * 0.16;
+      if (pointer.active) {
+        pointer.x += (pointer.targetX - pointer.x) * 0.2;
+        pointer.y += (pointer.targetY - pointer.y) * 0.2;
+      }
 
       for (let row = 0; row < rows; row += 1) {
         for (let column = 0; column < columns; column += 1) {
@@ -155,8 +167,10 @@ const ShapeWaves = ({
           const textAmount = textMask?.[maskIndex] ? textMask[maskIndex] / 255 : 0;
           const pointerDistance = Math.hypot(x - pointer.x, y - pointer.y);
           const clickDistance = Math.hypot(x - lastClick.x, y - lastClick.y);
+          const pointerFalloff = Math.max(0, 1 - pointerDistance / radius);
+          const smoothPointerFalloff = pointerFalloff * pointerFalloff * (3 - 2 * pointerFalloff);
           const pointerAmount = interactive
-            ? Math.max(0, 1 - pointerDistance / radius) * splashStrength
+            ? smoothPointerFalloff * splashStrength * pointer.strength
             : 0;
           const clickAmount = interactive && clickAge >= 0 && clickAge < 1.2
             ? Math.max(0, 1 - Math.abs(clickDistance - clickAge * radius * 2) / radius)
@@ -201,14 +215,40 @@ const ShapeWaves = ({
     };
 
     const handlePointerMove = (event) => {
-      pointer.x = event.clientX;
-      pointer.y = event.clientY;
+      const isOnPage = event.clientX >= 0
+        && event.clientY >= 0
+        && event.clientX < document.documentElement.clientWidth
+        && event.clientY < document.documentElement.clientHeight;
+      pointer.active = isOnPage;
+      if (!isOnPage) return;
+      pointer.targetX = event.clientX;
+      pointer.targetY = event.clientY;
     };
 
     const handlePointerDown = (event) => {
+      if (event.clientX >= document.documentElement.clientWidth
+        || event.clientY >= document.documentElement.clientHeight) {
+        return;
+      }
       lastClick = { x: event.clientX, y: event.clientY, time: performance.now() };
-      pointer.x = event.clientX;
-      pointer.y = event.clientY;
+      pointer.active = true;
+      pointer.targetX = event.clientX;
+      pointer.targetY = event.clientY;
+    };
+
+    const handlePointerOut = (event) => {
+      if (event.relatedTarget === null) pointer.active = false;
+    };
+
+    const handlePointerLeave = () => {
+      pointer.active = false;
+    };
+
+    const handleWindowBlur = () => {
+      pointer.active = false;
+      pointer.strength = 0;
+      pointer.x = -1000;
+      pointer.y = -1000;
     };
 
     const handleMotionPreference = (event) => {
@@ -225,6 +265,9 @@ const ShapeWaves = ({
     if (interactive) {
       window.addEventListener('pointermove', handlePointerMove, { passive: true });
       window.addEventListener('pointerdown', handlePointerDown, { passive: true });
+      window.addEventListener('pointerout', handlePointerOut);
+      window.addEventListener('blur', handleWindowBlur);
+      document.addEventListener('mouseleave', handlePointerLeave);
     }
 
     resize();
@@ -236,6 +279,9 @@ const ShapeWaves = ({
       reducedMotionQuery.removeEventListener('change', handleMotionPreference);
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('pointerout', handlePointerOut);
+      window.removeEventListener('blur', handleWindowBlur);
+      document.removeEventListener('mouseleave', handlePointerLeave);
       themeObserver.disconnect();
     };
   }, [
