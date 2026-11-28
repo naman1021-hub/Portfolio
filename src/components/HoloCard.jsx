@@ -47,14 +47,16 @@ export const HoloCard = ({
         </div>
 
         <div className="holo-card-copy">
-          <span className="holo-card-role">{headline}</span>
           <h2>{name}</h2>
           <p>{detail}</p>
         </div>
 
         <div className="holo-card-status">
-          <span className="holo-card-status-dot" aria-hidden="true" />
-          {status}
+          <div className="holo-card-status-line">
+            <span className="holo-card-status-dot" aria-hidden="true" />
+            <span>{status}</span>
+          </div>
+          <span className="holo-card-role">{headline}</span>
         </div>
       </div>
     </article>
