@@ -14,6 +14,7 @@ import { ExperiencePage } from './pages/ExperiencePage'
 import { ContactPage } from './pages/ContactPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import type { Project } from './types'
+import ShapeWaves from './components/ShapeWaves'
 
 // Page transition wrapper — smooth fade between routes
 const pageVariants = {
@@ -68,31 +69,60 @@ export function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-[#0B0D13] text-[#F1F5F9] selection:bg-[#B9522C] selection:text-white transition-colors duration-300 flex flex-col">
-          <Navbar onOpenResume={() => setIsResumeOpen(true)} />
-
-          <AnimatedRoutes
-            onSelectProject={(project) => setSelectedProject(project)}
-            onOpenResume={() => setIsResumeOpen(true)}
-            onNotify={showNotification}
+        <div className="relative isolate min-h-screen bg-[#0B0D13] text-[#F1F5F9] selection:bg-[#B9522C] selection:text-white transition-colors duration-300">
+          <ShapeWaves
+            text="</>"
+            fontFamily={'Geist, "Geist Sans", system-ui, sans-serif'}
+            fontWeight={500}
+            textSize={0.6}
+            shapes="mixed"
+            cellSize={10}
+            dotSize={0.75}
+            color="#C1CAD8"
+            hoverColor="#FFFFFF"
+            backgroundColor="transparent"
+            speed={1}
+            scale={1}
+            contrast={1}
+            brightness={0.45}
+            flow={0}
+            direction={0}
+            fade={0.25}
+            interactive
+            splashRadius={40}
+            splashStrength={0.4}
+            glow={0.25}
+            intro
+            introDuration={1.6}
+            paused={false}
           />
 
-          <Footer />
+          <div className="relative z-10 flex min-h-screen flex-col">
+            <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
-          <ProjectModal
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
+            <AnimatedRoutes
+              onSelectProject={(project) => setSelectedProject(project)}
+              onOpenResume={() => setIsResumeOpen(true)}
+              onNotify={showNotification}
+            />
 
-          <ResumeModal
-            isOpen={isResumeOpen}
-            onClose={() => setIsResumeOpen(false)}
-          />
+            <Footer />
 
-          <Toast
-            message={toastMessage}
-            onClose={() => setToastMessage(null)}
-          />
+            <ProjectModal
+              project={selectedProject}
+              onClose={() => setSelectedProject(null)}
+            />
+
+            <ResumeModal
+              isOpen={isResumeOpen}
+              onClose={() => setIsResumeOpen(false)}
+            />
+
+            <Toast
+              message={toastMessage}
+              onClose={() => setToastMessage(null)}
+            />
+          </div>
         </div>
       </BrowserRouter>
     </ThemeProvider>

@@ -21,23 +21,24 @@ export const projects = [
     {
         id: 'vayuvision',
         title: 'VayuVision',
-        tagline: 'AI-Powered Weather Assistant for Indian Locations',
+        tagline: 'Conversational AI for Indian Weather, Forecasts & Alerts',
         category: 'AI & Web',
         featured: true,
-        description: 'A weather assistant that brings conversational weather queries, current conditions, five-day forecasts, Indian location exploration, and forecast-based alerts into one application.',
+        description: 'An AI-powered weather application combining conversational weather questions with a map-based Indian location explorer, current conditions, five-day forecasts, and forecast-based alerts.',
         problemStatement: 'Weather data is often presented as raw meteorological information that can be difficult for people to interpret and act on.',
-        solution: 'Combines weather conversations, location search, current conditions, five-day forecasts, saved locations, and configurable forecast-threshold notices.',
+        solution: 'Combines an AI weather chat, a map and region explorer covering Indian states and union territories, Open-Meteo location search, current conditions, five-day forecasts, prompt comparison, saved locations, and configurable forecast-threshold notices.',
         myRole: 'Team leader on a team project exploring conversational AI for weather forecasting, alerts, and climate information.',
         technologies: ['React', 'Vite', 'JavaScript', 'Node.js', 'Express.js', 'Open-Meteo API', 'CSS'],
         githubUrl: 'https://github.com/naman1021-hub/VayuVision',
         highlights: [
-            'Conversational interface for weather-related questions',
-            'Search Indian cities and regions and view current conditions with five-day forecasts',
+            'Conversational AI assistant for weather questions and forecast context',
+            'Explore weather across all 28 Indian states and 8 union territories with a map and five-day forecasts',
+            'Search locations through Open-Meteo and view current weather conditions',
             'Compare three assistant prompt versions with forecast context and data checks',
             'Generate notices from configurable rain, wind, and temperature thresholds',
             'Save locations in browser storage for quick access'
         ],
-        architectureWorkflow: 'React + Vite Frontend → Express API → Open-Meteo Geocoding & Forecast APIs → Weather Context, Prompt Comparison & Threshold Notices',
+        architectureWorkflow: 'React + Vite Frontend → Express API → Open-Meteo Geocoding & Forecast APIs → Weather Map, Region Explorer, Prompt Comparison & Threshold Notices',
         previewType: 'weather',
         mockupDetails: {
             stats: [

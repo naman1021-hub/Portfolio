@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowLeft, Sun, Moon, Menu, X } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 import { personalInfo } from '../data/portfolioData';
+import { ElectricLogo } from './ElectricLogo';
 export const Navbar = ({ onOpenResume }) => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,8 +30,19 @@ export const Navbar = ({ onOpenResume }) => {
             : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand — arrow + name */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-[#C45D38] transition-colors"/>
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <ElectricLogo
+            src="/favicon.svg"
+            color="#ecc7ff"
+            glowColor="#ad6dff"
+            scale={0.7}
+            strands={4}
+            bend={0.6}
+            crackle={1.5}
+            arcs={1}
+            speed={2.5}
+            interactive
+          />
           <span className="text-lg sm:text-xl font-bold tracking-tight text-white font-display">
             {personalInfo.name}
             <span className="brand-dot text-[#C45D38] ml-0.5" aria-hidden="true">.</span>
